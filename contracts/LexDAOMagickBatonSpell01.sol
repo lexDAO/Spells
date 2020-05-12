@@ -12,7 +12,7 @@ contract LexDAOMagickBatonSpell01 {
     IToken private leeth = IToken(leethToken);
 
     function castSpell() public { // $LXDB holder can cast spell to withdraw balance of deposited $LXK
-        require(token.balanceOf(msg.sender) >= 1, "token balance insufficient");
+        require(token.balanceOf(msg.sender) == 1, "token balance insufficient");
         leeth.transfer(msg.sender, leeth.balanceOf(address(this)));
     }
 }
